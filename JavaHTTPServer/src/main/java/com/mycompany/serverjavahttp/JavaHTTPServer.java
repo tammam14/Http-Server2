@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
 
 public class JavaHTTPServer implements Runnable
 {	
-	static final File WEB_ROOT = new File("./files/");
+	static final File WEB_ROOT = new File("files");
 	static final String DEFAULT_FILE = "index.html";
 	static final String FILE_NOT_FOUND = "404.html";
 	static final String METHOD_NOT_SUPPORTED = "not_supported.html";
@@ -34,7 +34,7 @@ public class JavaHTTPServer implements Runnable
     static final String DB_JSON_URL = "/db/json/";
     static final String DB_XML_URL = "/db/xml/";
 	
-    static final int PORT = 8080;
+    static final int PORT = 3000;
 	
 	static final boolean verbose = true;
 	
@@ -123,7 +123,7 @@ public class JavaHTTPServer implements Runnable
 					
 				//send HTTP headers
 				headerOut.println("HTTP/1.1 501 Not Implemented");
-				headerOut.println("Server: Java HTTP Server from Mohamed : 1.0");
+				headerOut.println("Server: Java HTTP Server from mohamed : 1.0");
 				headerOut.println("Date: " + new Date());
 				headerOut.println("Content-type: " + contentMimeType);
 				headerOut.println("Content-length: " + fileLength);
@@ -164,7 +164,7 @@ public class JavaHTTPServer implements Runnable
 					
 					//send HTTP headers
 					headerOut.println("HTTP/1.1 200 OK");
-					headerOut.println("Server: Java HTTP Server from Mohamed : 1.0");
+					headerOut.println("Server: Java HTTP Server from mohamed : 1.0");
 					headerOut.println("Date: " + new Date());
 					headerOut.println("Content-type: " + content);
 					headerOut.println("Content-length: " + fileLength);
@@ -270,7 +270,7 @@ public class JavaHTTPServer implements Runnable
 		byte[] fileData = readFileData(file, fileLength);
 		
 		headerOut.println("HTTP/1.1 404 File Not Found");
-		headerOut.println("Server: Java HTTP Server from Mohamed : 1.0");
+		headerOut.println("Server: Java HTTP Server from mohamed : 1.0");
 		headerOut.println("Date: " + new Date());
 		headerOut.println("Content-type: " + content);
 		headerOut.println("Content-length: " + fileLength);
@@ -289,7 +289,7 @@ public class JavaHTTPServer implements Runnable
     {
         //send HTTP Headers
         headerOut.println("HTTP/1.1 301 Moved Permanently");
-        headerOut.println("Server: Java HTTP Server from Mohamed : 1.0");
+        headerOut.println("Server: Java HTTP Server from mohamed : 1.0");
         headerOut.println("Location: " + filePath + "/");
         headerOut.println(); // blank line between headers and content, very important!
         headerOut.flush();
@@ -309,7 +309,7 @@ public class JavaHTTPServer implements Runnable
                 
         //send HTTP headers
         headerOut.println("HTTP/1.1 200 OK");
-        headerOut.println("Server: Java HTTP Server from Mohamed : 1.0");
+        headerOut.println("Server: Java HTTP Server from mohamed : 1.0");
         headerOut.println("Date: " + new Date());
         headerOut.println("Content-type: application/xml");
         headerOut.println("Content-length: " + xmlData.length());
@@ -383,7 +383,7 @@ public class JavaHTTPServer implements Runnable
   
         //send HTTP headers
         headerOut.println("HTTP/1.1 200 OK");
-        headerOut.println("Server: Java HTTP Server from Mohamed : 1.0");
+        headerOut.println("Server: Java HTTP Server from mohamed : 1.0");
         headerOut.println("Date: " + new Date());
         headerOut.println("Content-type: " + contentType);
         headerOut.println("Content-length: " + textData.length());
